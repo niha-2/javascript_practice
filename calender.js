@@ -4,7 +4,7 @@ const daysInMonth = (month, year) => {
 
 const generateCalendar = (month, year) => {
   const firstDay = new Date(year, month, 1).getDay();
-  const totalDays = daysInMonth(month, year);
+  const lastDate = daysInMonth(month, year);
 
   let calender = "";
   calender += `       ${month + 1}月 ${year}\n`;
@@ -13,7 +13,7 @@ const generateCalendar = (month, year) => {
   for (let i = 0; i < firstDay; i++) {
     calender += "   ";
   }
-  for (let i = 1; i <= totalDays; i++) {
+  for (let i = 1; i <= lastDate; i++) {
     if (i < 10) {
       calender += " ";
     }
